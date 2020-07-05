@@ -1,0 +1,27 @@
+[package]
+name = "ricer"
+version = "0.1.0"
+authors = ["zoefiri <pyral222@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+serde = "1.0"
+walkdir = "2.3.1"
+serde_yaml = "0.8"
+yaml-rust = "0.4.4"
+anyhow = "1.0.31"
+dirs = "2.0.2"
+fs_extra = "0.1.0"
+backtrace = "0.3"
+
+# The development profile, used for `cargo build`
+[profile.dev]
+opt-level = 0  # Controls the --opt-level the compiler builds with
+debug = true   # Controls whether the compiler passes `-g`
+
+# The release profile, used for `cargo build --release`
+[profile.release]
+opt-level = 3
+debug = false
